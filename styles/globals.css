@@ -22,3 +22,6 @@ main {
     margin: 0 20px;
   }
 }
+label {
+  font-size: 0.95rem;
+}

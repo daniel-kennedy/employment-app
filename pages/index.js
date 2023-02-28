@@ -83,16 +83,19 @@ export default function Home() {
         />
         <h3
           style={{
-            display: 'inline',
-            marginLeft: '2rem',
             verticalAlign: 'text-bottom',
           }}
         >
           Washington County &middot; PA
         </h3>
         <section name="personal">
-          <h4>Personal Information</h4>
-          <input name="position-desired" id="position-desired" type="text" />
+          <h4>Employment Information</h4>
+          <input
+            style={{ marginTop: '2rem' }}
+            name="position-desired"
+            id="position-desired"
+            type="text"
+          />
           <label htmlFor="position-desired">
             Position / Department Desired
           </label>
