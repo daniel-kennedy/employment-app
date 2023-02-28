@@ -76,7 +76,20 @@ export default function Home() {
         <title>County of Washington : Employment Application</title>
       </Head>
       <main>
-        <h3>Employment Application</h3>
+        <img
+          style={{ marginTop: '10px' }}
+          src="/img/county-logo-sm.png"
+          height="75"
+        />
+        <h3
+          style={{
+            display: 'inline',
+            marginLeft: '2rem',
+            verticalAlign: 'text-bottom',
+          }}
+        >
+          Washington County &middot; PA
+        </h3>
         <section name="personal">
           <h4>Personal Information</h4>
           <input name="position-desired" id="position-desired" type="text" />
@@ -109,46 +122,42 @@ export default function Home() {
               id="state"
               type="text"
               className="browser-default"
+              defaultValue="PA - Pennsylvania"
             >
               <StateList />
             </select>
             <label htmlFor="state">State</label>
             {/* ZIP */}
-            <input
-              name="zipcode"
-              id="zipcode"
-              type="text"
-              placeholder="ZIP Code"
-            />
+            <input name="zipcode" id="zipcode" type="text" />
+            <label htmlFor="zipcode">ZIP Code</label>
           </div>
           <div>
-            <input type="email" placeholder="Email" />
-            <input
-              type="tel"
-              placeholder="Phone"
-              pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"
-              required
-            />
+            <input type="email" />
+            <label htmlFor="email">Email</label>
+            <input type="tel" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" required />
+            <label htmlFor="phone">Phone</label>
           </div>
           <div>
-            <label>Select Yes/No</label>
-            <select className="browser-default">
+            <select id="county-resident" className="browser-default">
               <option value="" disabled>
                 Washington County Resident?
               </option>
               <option value="1">Yes</option>
               <option value="2">No</option>
             </select>
+            <label htmlFor="county-resident">Washington County Resident?</label>
           </div>
           <div>
-            <label>Select Yes/No</label>
-            <select className="browser-default">
+            <select id="previously-employed" className="browser-default">
               <option value="" disabled>
                 Previously Employed by Us?
               </option>
               <option value="1">Yes</option>
               <option value="2">No</option>
             </select>
+            <label htmlFor="previously-employed">
+              Previously Employed By Us?
+            </label>
           </div>
         </section>
       </main>
