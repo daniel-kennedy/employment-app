@@ -1,5 +1,9 @@
 import Head from 'next/head';
 
+export function submitApplication() {
+  return null;
+}
+
 export function StateList() {
   const states = [
     { name: 'Alabama', abbreviation: 'AL' },
@@ -70,6 +74,11 @@ export function StateList() {
 }
 
 export default function Home() {
+  function checkForConviction() {
+    const conviction = document.getElementById('convictions').value;
+    document.getElementById('conviction-description').classList.toggle('hide');
+  }
+
   return (
     <div>
       <Head>
@@ -89,7 +98,7 @@ export default function Home() {
           Washington County &middot; PA
         </h3>
         <section name="personal">
-          <h4>Employment Information</h4>
+          <h4>Employment Inquiry</h4>
           <input
             style={{ marginTop: '2rem' }}
             name="position-desired"
@@ -161,6 +170,58 @@ export default function Home() {
             <label htmlFor="previously-employed">
               Previously Employed By Us?
             </label>
+          </div>
+          <div>
+            <select
+              id="convictions"
+              className="browser-default"
+              onChange={checkForConviction}
+            >
+              <option value="" disabled>
+                Have You Been Convicted of a Crime, Excluding any Summary
+                Traffic Offenses?
+              </option>
+              <option value="1">Yes</option>
+              <option value="2">No</option>
+            </select>
+            <label htmlFor="convictions">
+              Have You Been Convicted of a Crime, Excluding any Summary Traffic
+              Offenses?
+            </label>
+          </div>
+          <div id="conviction-description">
+            <textarea
+              name="conviction-description"
+              id="conviction-description"
+              cols="45"
+              rows="10"
+              className="materialize-textarea"
+            ></textarea>
+            <label htmlFor="conviction-description">
+              Conviction Description
+            </label>
+          </div>
+          <div class="file-field input-field">
+            <div class="btn">
+              <span>R&eacute;sum&eacute;</span>
+              <input type="file" />
+            </div>
+            <div class="file-path-wrapper">
+              <input
+                name="resume"
+                id="resume"
+                class="file-path validate"
+                type="text"
+              />
+            </div>
+          </div>
+          <div style={{ float: 'right' }}>
+            <a
+              className="waves-effect  indigo darken-4 btn"
+              onClick={submitApplication}
+            >
+              Submit Inquiry
+            </a>
           </div>
         </section>
       </main>
