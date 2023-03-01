@@ -9,14 +9,19 @@ body {
   background: #e0f2f1;
 }
 
+h4 {
+  padding-top: 2rem;
+}
+
 * {
   box-sizing: border-box;
 }
 
 main {
-  margin: 0 auto;
+  margin: 5rem auto;
   max-width: 800px;
   background: #fff;
+  border-radius: 10px;
 }
 
 @media only screen and (max-width: 799px) {
