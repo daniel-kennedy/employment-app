@@ -222,3 +222,6 @@ export default function Home() {
     </div>
   );
 }
+
+const cwd = process.cwd();
+console.log(cwd);
