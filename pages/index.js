@@ -195,16 +195,16 @@ export default function Home() {
               Conviction Description
             </label>
           </div>
-          <div class="file-field input-field">
-            <div class="btn">
+          <div className="file-field input-field">
+            <div className="btn">
               <span>R&eacute;sum&eacute;</span>
               <input type="file" />
             </div>
-            <div class="file-path-wrapper">
+            <div className="file-path-wrapper">
               <input
                 name="resume"
                 id="resume"
-                class="file-path validate"
+                className="file-path validate"
                 type="text"
               />
             </div>
