@@ -23,13 +23,20 @@ main {
   }
 }
 
-section {
-  margin-bottom: 5rem;
+section,
+input,
+select {
+  margin: 2rem 0;
 }
 
+/* section {
+  margin-bottom: 5rem;
+} */
+
 label {
-  font-size: 1rem;
+  font-size: 1.25rem;
 }
+
 .hide {
   display: none;
 }
@@ -38,6 +45,6 @@ label {
   display: inline-block;
 }
 
-input:focus {
-  border-bottom: 1px solid #1a237e !important;
+nav {
+  padding: 0 10px;
 }

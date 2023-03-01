@@ -1,4 +1,5 @@
 import Head from 'next/head';
+import Navbar from '../components/Navbar';
 
 export function submitApplication() {
   return null;
@@ -84,21 +85,15 @@ export default function Home() {
       <Head>
         <title>County of Washington : Employment Application</title>
       </Head>
+      <Navbar />
       <main>
-        <img
-          style={{ marginTop: '10px' }}
-          src="/img/county-logo-sm.png"
-          height="75"
-        />
-        <h3
-          style={{
-            verticalAlign: 'text-bottom',
-          }}
-        >
-          Washington County &middot; PA
-        </h3>
         <section name="personal">
-          <h4>Employment Inquiry</h4>
+          <div style={{ textAlign: 'center' }}>
+            <h4>
+              Washington County &middot; PA <br />
+              Employment Inquiry
+            </h4>
+          </div>
           <input
             style={{ marginTop: '2rem' }}
             name="position-desired"
@@ -217,7 +212,7 @@ export default function Home() {
           </div>
           <div style={{ float: 'right' }}>
             <a
-              className="waves-effect  indigo darken-4 btn"
+              className="waves-effect  teal darken-4 btn"
               onClick={submitApplication}
             >
               Submit Inquiry
