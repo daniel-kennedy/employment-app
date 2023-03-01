@@ -1,5 +1,6 @@
 import Head from 'next/head';
 import Navbar from '../components/Navbar';
+import ReactDOM from 'react-dom';
 
 export function submitApplication() {
   return null;
@@ -122,7 +123,9 @@ export default function Home() {
             {/* City */}
             <input name="city" id="city" type="text" />
             <label htmlFor="city">City</label>
-            {/* State */}
+          </div>
+          {/* State */}
+          <div className="input-field col s12">
             <select
               name="state"
               id="state"
@@ -133,10 +136,10 @@ export default function Home() {
               <StateList />
             </select>
             <label htmlFor="state">State</label>
-            {/* ZIP */}
-            <input name="zipcode" id="zipcode" type="text" />
-            <label htmlFor="zipcode">ZIP Code</label>
           </div>
+          {/* ZIP */}
+          <input name="zipcode" id="zipcode" type="text" />
+          <label htmlFor="zipcode">ZIP Code</label>
           <div>
             <input type="email" />
             <label htmlFor="email">Email</label>

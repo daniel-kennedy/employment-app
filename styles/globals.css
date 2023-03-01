@@ -31,8 +31,7 @@ main {
 }
 
 section,
-input,
-select {
+input {
   margin: 0 2rem 2rem 2rem;
 }
 
