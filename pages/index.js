@@ -76,14 +76,13 @@ export function StateList() {
 
 export default function Home() {
   function checkForConviction() {
-    const conviction = document.getElementById('convictions').value;
     document.getElementById('conviction-description').classList.toggle('hide');
   }
 
   return (
     <div>
       <Head>
-        <title>County of Washington : Employment Application</title>
+        <title>County of Washington : Mobile Employment Inquiry</title>
       </Head>
       <Navbar />
       <main>

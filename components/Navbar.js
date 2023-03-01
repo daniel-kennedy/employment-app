@@ -9,7 +9,7 @@ export default function Navbar() {
             height="45"
           />
         </a>
-        <ul id="nav-mobile" className="right hide-on-med-and-down">
+        <ul id="nav-mobile" className="right">
           <li>
             <a href="https://www.co.washington.pa.us/Jobs.aspx">
               Job Opportunities
