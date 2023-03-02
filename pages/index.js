@@ -104,14 +104,21 @@ export default function Home() {
     }));
   };
 
+  const [selected, setSelected] = useState(null);
+
+  const handleChangeSelect = (selectedOption) => {
+    setSelected(selectedOption);
+    console.log(`Option selected:`, selectedOption);
+  };
+
   const handleSubmit = (event) => {
     event.preventDefault();
     alert(JSON.stringify(state));
   };
 
-  function checkForConviction() {
-    document.getElementById('conviction-description').classList.toggle('show');
-  }
+  // function checkForConviction() {
+  //   document.getElementById('conviction-description').classList.toggle('show');
+  // }
 
   return (
     <div>
@@ -130,7 +137,7 @@ export default function Home() {
                 Position / Department Desired
               </label>
               <input
-                name="position-desired"
+                name="positionDesired"
                 id="position-desired"
                 type="text"
                 className="form-control"
@@ -160,7 +167,7 @@ export default function Home() {
             <div className="form-group">
               <label htmlFor="street-address">Street Address</label>
               <textarea
-                name="street-address"
+                name="streetAddress"
                 id="street-address"
                 className="form-control"
                 value={state.streetAddress}
@@ -212,6 +219,7 @@ export default function Home() {
 
               <label htmlFor="phone">Phone</label>
               <input
+                name="phone"
                 type="tel"
                 pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"
                 className="form-control"
@@ -255,12 +263,12 @@ export default function Home() {
                 Traffic Offenses?
               </label>
               <Select
-                defaultValue={options[1]}
+                // defaultValue={options[1]}
                 value={state.convictions}
                 options={options}
                 id="convictions"
                 name="convictions"
-                onChange={(handleInputChange, checkForConviction)}
+                onChange={handleChangeSelect}
               />
               {/* <option value="Yes">Yes</option>
                 <option value="No">No</option> */}
@@ -274,7 +282,7 @@ export default function Home() {
                 name="convictionDescription"
                 id="conviction-description"
                 cols="45"
-                rows="10"
+                rows="5"
                 className="form-control"
                 value={state.convictionDescription}
                 onChange={handleInputChange}
