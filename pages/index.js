@@ -230,8 +230,8 @@ export default function Home() {
                 value={state.countyResident}
                 onChange={handleInputChange}
               >
-                <option value="1">Yes</option>
-                <option value="2">No</option>
+                <option value="Yes">Yes</option>
+                <option value="No">No</option>
               </select>
             </div>
             <div className="form-group">
@@ -245,8 +245,8 @@ export default function Home() {
                 value={state.previouslyEmployed}
                 onChange={handleInputChange}
               >
-                <option value="1">Yes</option>
-                <option value="2">No</option>
+                <option value="Yes">Yes</option>
+                <option value="No">No</option>
               </select>
             </div>
             <div className="form-group">
@@ -255,12 +255,11 @@ export default function Home() {
                 Traffic Offenses?
               </label>
               <Select
-                value={state.options.value}
+                defaultValue={options[1]}
+                value={state.convictions}
                 options={options}
                 id="convictions"
                 name="convictions"
-                defaultValue={options[1]}
-                // value={state.convictions}
                 onChange={(handleInputChange, checkForConviction)}
               />
               {/* <option value="Yes">Yes</option>
