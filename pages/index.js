@@ -89,10 +89,7 @@ export default function Home() {
       <main>
         <section name="personal">
           <div style={{ textAlign: 'center' }}>
-            <h4>
-              Washington County &middot; PA <br />
-              Employment Inquiry
-            </h4>
+            <h4 className="display-6 mb-5">Employment Inquiry</h4>
           </div>
           <div className="form-group">
             <label htmlFor="position-desired" class="form-label">

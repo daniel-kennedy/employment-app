@@ -17,6 +17,11 @@ h4 {
   box-sizing: border-box;
 }
 
+.nav-container {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
 main {
   margin: 5rem auto;
   padding: 10px;
