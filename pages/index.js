@@ -263,7 +263,7 @@ export default function Home() {
                 Traffic Offenses?
               </label>
               <Select
-                // defaultValue={options[1]}
+                defaultValue={options[1]}
                 value={state.convictions}
                 options={options}
                 id="convictions"
