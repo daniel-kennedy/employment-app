@@ -2,7 +2,7 @@ import Link from 'next/link';
 
 export default function Navbar() {
   return (
-    <div className="vw-100">
+    <div>
       <nav
         class="navbar navbar-dark ml-5 mr-5"
         style={{ backgroundColor: 'teal' }}
