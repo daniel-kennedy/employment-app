@@ -8,6 +8,7 @@
     "start": "next start"
   },
   "dependencies": {
+    "@nextui-org/react": "*",
     "@sendgrid/mail": "^7.7.0",
     "materialize-css": "^1.0.0-rc.2",
     "next": "^13.0.6",

@@ -94,84 +94,102 @@ export default function Home() {
               Employment Inquiry
             </h4>
           </div>
-          <input
-            style={{ marginTop: '2rem' }}
-            name="position-desired"
-            id="position-desired"
-            type="text"
-          />
-          <label htmlFor="position-desired">
-            Position / Department Desired
-          </label>
-          <div>
-            <input name="firstname" type="text" />
-            <label htmlFor="firstname">First name</label>
-            <input name="lastname" type="text" />
-            <label htmlFor="lastname">Last name</label>
+          <div className="form-group">
+            <label htmlFor="position-desired" class="form-label">
+              Position / Department Desired
+            </label>
+            <input
+              name="position-desired"
+              id="position-desired"
+              type="text"
+              className="form-control"
+            />
           </div>
-          <div>
+
+          <div className="form-group">
+            <label htmlFor="firstname">First name</label>
+            <input name="firstname" className="form-control" type="text" />
+            <label htmlFor="lastname">Last name</label>
+            <input name="lastname" className="form-control" type="text" />
+          </div>
+          <div className="form-group">
+            <label htmlFor="street-address">Street Address</label>
             <textarea
               name="street-address"
               id="street-address"
-              cols="45"
-              rows="10"
-              className="materialize-textarea"
+              className="form-control"
             ></textarea>
-            <label htmlFor="street-address">Street Address</label>
           </div>
-          <div>
+          <div className="from-group">
             {/* City */}
-            <input name="city" id="city" type="text" />
             <label htmlFor="city">City</label>
+            <input name="city" id="city" type="text" className="form-control" />
           </div>
           {/* State */}
-          <div className="input-field col s12">
+          <div className="form-group">
+            <label htmlFor="state">State</label>
             <select
               name="state"
               id="state"
               type="text"
-              className="browser-default"
+              className="form-control"
               defaultValue="PA - Pennsylvania"
             >
               <StateList />
             </select>
-            <label htmlFor="state">State</label>
           </div>
           {/* ZIP */}
-          <input name="zipcode" id="zipcode" type="text" />
-          <label htmlFor="zipcode">ZIP Code</label>
-          <div>
-            <input type="email" />
-            <label htmlFor="email">Email</label>
-            <input type="tel" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" required />
-            <label htmlFor="phone">Phone</label>
+          <div className="form-group">
+            <label htmlFor="zipcode">ZIP Code</label>
+            <input
+              name="zipcode"
+              id="zipcode"
+              type="text"
+              className="form-control"
+            />
           </div>
-          <div>
-            <select id="county-resident" className="browser-default">
+          <div className="from-group">
+            <label htmlFor="email">Email</label>
+            <input type="email" className="form-control" />
+
+            <label htmlFor="phone">Phone</label>
+            <input
+              type="tel"
+              pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"
+              className="form-control"
+              required
+            />
+          </div>
+          <div className="form-group">
+            <label htmlFor="county-resident">Washington County Resident?</label>
+            <select id="county-resident" className="form-control">
               <option value="" disabled>
                 Washington County Resident?
               </option>
               <option value="1">Yes</option>
               <option value="2">No</option>
             </select>
-            <label htmlFor="county-resident">Washington County Resident?</label>
           </div>
-          <div>
-            <select id="previously-employed" className="browser-default">
+          <div className="form-group">
+            <label htmlFor="previously-employed">
+              Previously Employed By Us?
+            </label>
+            <select id="previously-employed" className="form-control">
               <option value="" disabled>
                 Previously Employed by Us?
               </option>
               <option value="1">Yes</option>
               <option value="2">No</option>
             </select>
-            <label htmlFor="previously-employed">
-              Previously Employed By Us?
-            </label>
           </div>
-          <div>
+          <div className="form-group">
+            <label htmlFor="convictions">
+              Have You Been Convicted of a Crime, Excluding any Summary Traffic
+              Offenses?
+            </label>
             <select
               id="convictions"
-              className="browser-default"
+              className="form-control"
               onChange={checkForConviction}
             >
               <option value="" disabled>
@@ -179,42 +197,31 @@ export default function Home() {
                 Traffic Offenses?
               </option>
               <option value="1">Yes</option>
-              <option value="2">No</option>
+              <option value="2" selected>
+                No
+              </option>
             </select>
-            <label htmlFor="convictions">
-              Have You Been Convicted of a Crime, Excluding any Summary Traffic
-              Offenses?
-            </label>
           </div>
-          <div id="conviction-description">
+          <div className="form-group hide" id="conviction-description">
+            <label htmlFor="conviction-description">
+              Conviction Description
+            </label>
             <textarea
               name="conviction-description"
               id="conviction-description"
               cols="45"
               rows="10"
-              className="materialize-textarea"
+              className="form-control"
             ></textarea>
-            <label htmlFor="conviction-description">
-              Conviction Description
-            </label>
           </div>
-          <div className="file-field input-field">
-            <div className="btn">
-              <span>R&eacute;sum&eacute;</span>
-              <input type="file" />
-            </div>
-            <div className="file-path-wrapper">
-              <input
-                name="resume"
-                id="resume"
-                className="file-path validate"
-                type="text"
-              />
-            </div>
+          <div class="form-group mt-5">
+            <label for="resumeUpload">R&eacute;sum&eacute;&nbsp;</label>
+            <input type="file" class="form-control-file" id="resumeUpload" />
           </div>
-          <div style={{ float: 'right' }}>
+          <div className="mt-5">
             <a
-              className="waves-effect  teal darken-4 btn"
+              className="btn"
+              style={{ backgroundColor: 'teal', color: 'white' }}
               onClick={submitApplication}
             >
               Submit Inquiry
