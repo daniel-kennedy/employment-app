@@ -111,10 +111,16 @@ export default function Home() {
     console.log(`Option selected:`, selectedOption);
   };
 
-  const handleSubmit = (event) => {
+  function handleSubmit(event) {
+    const response = fetch('', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      mode: 'no-cors',
+      body: JSON.stringify(state),
+    });
     event.preventDefault();
     alert(JSON.stringify(state));
-  };
+  }
 
   // function checkForConviction() {
   //   document.getElementById('conviction-description').classList.toggle('show');
@@ -127,7 +133,11 @@ export default function Home() {
       </Head>
       <Navbar />
       <main>
-        <form onSubmit={handleSubmit}>
+        <form
+          enctype="multipart/form-data"
+          onSubmit={handleSubmit}
+          method="POST"
+        >
           <section name="personal">
             <div style={{ textAlign: 'center' }}>
               <h4 className="display-6 mb-5">Employment Inquiry</h4>
@@ -262,17 +272,16 @@ export default function Home() {
                 Have You Been Convicted of a Crime, Excluding any Summary
                 Traffic Offenses?
               </label>
-              <Select
-                defaultValue={options[1]}
+              <select
                 value={state.convictions}
-                options={options}
                 id="convictions"
                 name="convictions"
-                onChange={handleChangeSelect}
-              />
-              {/* <option value="Yes">Yes</option>
-                <option value="No">No</option> */}
-              {/* </select> */}
+                onChange={handleInputChange}
+                className="form-control"
+              >
+                <option value="No">No</option>
+                <option value="Yes">Yes</option>
+              </select>
             </div>
             <div className="form-group hide" id="conviction-description">
               <label htmlFor="conviction-description">
@@ -305,6 +314,3 @@ export default function Home() {
     </div>
   );
 }
-
-const cwd = process.cwd();
-console.log(cwd);
