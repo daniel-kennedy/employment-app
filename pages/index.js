@@ -1,8 +1,6 @@
 import Head from 'next/head';
 import Navbar from '../components/Navbar';
 import React, { useState } from 'react';
-import ReactDOM from 'react-dom';
-import Select from 'react-select';
 
 export function StateList() {
   const states = [
